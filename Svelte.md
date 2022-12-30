@@ -25,7 +25,7 @@ yarn create vite my-app --template svelte-ts
 	let count = 0;
   
 	$: doubled = count * 2;
-  $: if (count >= 10) {
+  	$: if (count >= 10) {
 		alert('count is dangerously high!');
 		count = 9;
 	}
@@ -60,17 +60,17 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 
 	function addNumber() {
 		numbers = [...numbers, numbers.length + 1];
-    
-    or
-    
-    numbers[numbers.length] = numbers.length + 1;
-    
-    or
-    
-    //Assign to itself after push
-    numbers.push(numbers.length + 1);
-	  numbers = numbers;
 	}
+    
+    	//or
+    
+    	numbers[numbers.length] = numbers.length + 1;
+    
+    	//or
+    
+    	//Assign to itself after push
+    	numbers.push(numbers.length + 1);
+	numbers = numbers;	
 
 	$: sum = numbers.reduce((t, n) => t + n, 0);
 </script>
@@ -80,19 +80,17 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 
 ### Object Mutation
 ```svelte
+<script>
+	//Triggers Mutation
+	let obj = { foo: { bar : { bip : 0} } };
+	obj.foo.bar += 1;
 
-//Triggers Mutation
-let obj = { foo: { bar : { bip : 0} } };
-obj.foo.bar += 1;
+	//Doesn't Work - Original object reference is not used
+	const foo = obj.foo;
+	foo.bar = 'baz';
 
-
-//Doesn't Work - Original object reference is not used
-const foo = obj.foo;
-foo.bar = 'baz';
-
-//Doesn't Work
-thing.foo.bar = 'baz';
-
-
+	//Doesn't Work
+	thing.foo.bar = 'baz';
+</script>
 ```
 
