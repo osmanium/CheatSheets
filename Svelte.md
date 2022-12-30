@@ -104,3 +104,79 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 </script>
 ```
 
+### Child Component Prop Declarion
+```svelte
+
+//Nested.svelte
+<script>
+	export let answer;
+	
+	//or
+	
+	export let answer = 42; //Default Value
+</script>
+
+
+//App.svelte
+<script>
+	import Nested from './Nested.svelte';
+</script>
+
+<Nested answer={42}/>
+```
+
+###Spread Props
+```svelte
+<script>
+	const pkg = {
+		name: 'svelte',
+		version: 3,
+		speed: 'blazing',
+		website: 'https://svelte.dev'
+	};
+	
+	<Info name={pkg.name} version={pkg.version} speed={pkg.speed} website={pkg.website}/>
+	
+	or 
+	
+	<Info {...pkg}/>
+</script>
+```
+
+###Logic Operators
+```svelte
+<script>
+</script>
+
+{#if user.loggedIn}
+...
+{:else}
+...
+{/if}
+
+
+{#if x > 10}
+...
+{:else if 5 > x}
+...
+{:else}
+...
+{/if}
+
+
+let cats = [
+	{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
+	{ id: 'z_AbfPXTKms', name: 'Maru' },
+	{ id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
+];
+{#each cats as { id, name }, i}
+	<li>
+		<a target="_blank" href="https://www.youtube.com/watch?v={id}" rel="noreferrer">
+			{i + 1}: {name}
+		</a>
+	</li>
+{/each}
+
+
+```
+
