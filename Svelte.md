@@ -51,6 +51,9 @@ yarn create vite my-app --template svelte-ts
 <p>{@html string}</p>
 ```
 
+### Assignments
+A simple rule of thumb: the updated variable must directly appear on the left hand side of the assignment.
+
 
 ### Array Mutation
 Array.Push does not mutate the array, it has to be reassigned to trigger the change
@@ -81,16 +84,23 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 ### Object Mutation
 ```svelte
 <script>
-	//Triggers Mutation
 	let obj = { foo: { bar : { bip : 0} } };
+	
+	//Triggers Mutation
 	obj.foo.bar += 1;
 
-	//Doesn't Work - Original object reference is not used
+	//Doesn't Work - Original object reference is not used directly on the left side - Indirect
 	const foo = obj.foo;
 	foo.bar = 'baz';
 
-	//Doesn't Work
-	thing.foo.bar = 'baz';
+	//Doesn't Work - Indirect
+	function quox(thing) {
+		thing.foo.bar = 'baz';
+	}
+	quox(obj);
+	//But assigning obj back will trigger it
+	obj = obj;
+	
 </script>
 ```
 
