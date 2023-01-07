@@ -104,7 +104,7 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 </script>
 ```
 
-### Child Component Prop Declarion
+### Child Component Prop Declaration
 ```svelte
 
 //Nested.svelte
@@ -125,7 +125,7 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 <Nested answer={42}/>
 ```
 
-###Spread Props
+### Spread Props
 ```svelte
 <script>
 	const pkg = {
@@ -143,7 +143,7 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 </script>
 ```
 
-###Logic Operators
+### Logic Operators
 ```svelte
 <script>
 </script>
