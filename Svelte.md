@@ -330,7 +330,7 @@ counter.$destroy();
 - If you don't create instance with new(), 
   - You can only use `<Counter bind:this={counter}/>`
 
-- Suggested way is second option as much as possible
+- Suggested way is second option as much as possible or targeting into an html element such as div
 
 
 
