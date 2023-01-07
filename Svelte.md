@@ -1,9 +1,15 @@
 # Table of Contents
 1. [Create Project](#create-project)
-2. [Svelte Component/File Structure](svelte-component-file-structure)
+2. [Svelte Component/File Structure](svelte-componentfile-structure)
 3. [Reactivity](#reactivity)
 4. [Html Text Content](#html-text-content)
 5. [Assignments](#assignments)
+6. [Array Mutation](#array-mutation)
+7. [Object Mutation](#object-mutation)
+8. [Child Component Prop Declaration](#child-component-prop-declaration)
+9. [Spread Props](#spread-props)
+10. [Logic Operators](#logic-operators)
+11. 
 
 
 ### Create Project
