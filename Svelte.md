@@ -1,9 +1,15 @@
+# Table of Contents
+1. [Create Project](#create-project)
+2. [Svelte Component/File Structure](svelte-component-file-structure)
+3. [Reactivity](#reactivity)
+4. [Html Text Content](#html-text-content)
+5. [Assignments](#assignments)
+
+
 ### Create Project
 ```
 yarn create vite my-app --template svelte-ts
 ```
-
-
 
 
 
