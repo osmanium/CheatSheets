@@ -331,6 +331,6 @@ counter.$destroy();
   - You can only use `<Counter bind:this={counter}/>`
 
 - Suggested way is second option as much as possible or targeting into an html element such as div
-
+- Example page: https://stackblitz.com/edit/vitejs-vite-x3sdxs?file=index.html,src%2FApp.svelte,src%2Flib%2FCounterWithId.svelte
 
 
