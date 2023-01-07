@@ -9,7 +9,7 @@
 8. [Child Component Prop Declaration](#child-component-prop-declaration)
 9. [Spread Props](#spread-props)
 10. [Logic Operators](#logic-operators)
-11. 
+11. [Ways of Dynamic Component Creation](#ways-of-dynamic-component-manupulation)
 
 
 ### Create Project
@@ -191,4 +191,146 @@ let cats = [
 
 
 ```
+
+### Ways of Dynamic Component Manupulation
+
+
+A basic component example
+
+```svelte
+<script lang="ts">
+  let count: number = 0
+  export const increment = () => {
+    count += 1
+  }
+</script>
+
+<button on:click={increment}>
+  count is {count}
+</button>
+```
+
+Target must be provided at all times.
+
+#### 1 - Create
+
+```svelte
+<script lang="ts">
+  let counter:Counter;
+  
+  onMount(async() => {
+    counter.increment();
+  }
+</script>
+
+<div>
+  <Counter bind:this={counter}/> //Prints: 1
+</div>
+
+```
+
+
+#### 2 - Create
+
+```svelte
+<script lang="ts">
+  let counter:typeof Counter;
+  
+  onMount(async() => {
+    counter.increment();
+  }
+</script>
+
+<div>
+  <Counter bind:this={counter}/> //Prints: 1
+</div>
+
+```
+
+
+#### 3 - Create
+
+```svelte
+<script lang="ts">
+  let counter:typeof Counter; //or let counter: Counter
+  
+  onMount(async() => {
+    var targetCounterDiv = document.querySelector('#counterDiv');
+
+    counter = new Counter({
+      target: targetCounterDiv,
+      props: {}
+    });
+    counter.increment();
+  }
+</script>
+
+<div id='counterDiv'>
+  //Counter will be appended as last child of this div element
+  //Also it will print 1 because of increment
+</div>
+
+```
+
+
+#### 4 - Create
+
+```svelte
+<script lang="ts">
+  let counter:typeof Counter; //or let counter: Counter
+  
+  onMount(async() => {
+    var targetCounterDiv = document.querySelector('#counterDiv');
+
+    counter = new Counter({
+      target: targetCounterDiv,
+      props: {}
+    });
+    counter.increment();
+  }
+</script>
+
+<div id='counterDiv'>
+  //Counter will be appended as last child of this div element
+  //Also it will print 1 because of increment
+</div>
+
+```
+
+
+#### 5 - Destroy
+
+If you have reference to object
+
+```svelte
+
+let counter = new Counter({
+  target: targetCounterDiv,
+  props: {}
+});
+
+counter.$destroy();
+
+```
+
+#### Summary
+
+- If you use new() 
+  - Target is a must to provide
+  - Instance is not equal to html component
+  - No access to html element
+  - Class methods are accessible and executable
+  - If you bind it to svelte:component then check if the variable exist
+   	 ```svelte
+   	 {#if counter}
+		<svelte:component this={counter} props={json formatted object}/>
+	 {/if}
+	```
+  - You may have to use `tick()` before running any methods on the component
+- If you don't create instance with new(), 
+  - You can only use `<Counter bind:this={counter}/>`
+
+- Suggested way is second option as much as possible
+
+
 
