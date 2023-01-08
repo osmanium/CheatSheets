@@ -1,25 +1,29 @@
 # Table of Contents
-1. [Create Project](#create-project)
-2. [Svelte Component/File Structure](svelte-componentfile-structure)
-3. [Reactivity](#reactivity)
-4. [Html Text Content](#html-text-content)
-5. [Assignments](#assignments)
-6. [Array Mutation](#array-mutation)
-7. [Object Mutation](#object-mutation)
-8. [Child Component Prop Declaration](#child-component-prop-declaration)
-9. [Spread Props](#spread-props)
-10. [Logic Operators](#logic-operators)
-11. [Ways of Dynamic Component Creation](#ways-of-dynamic-component-manupulation)
+1. [Create Project](#1-create-project)
+2. [Svelte Component/File Structure](#2-svelte-componentfile-structure)
+3. [Reactivity](#3-reactivity)
+4. [Html Text Content](#4-html-text-content)
+5. [Assignments](#5-assignments)
+6. [Array Mutation](#6-array-mutation)
+7. [Object Mutation](#7-object-mutation)
+8. [Child Component Prop Declaration](#8-child-component-prop-declaration)
+9. [Spread Props](#9-spread-props)
+10. [Logic Operators](#10-logic-operators)
+11. [Ways of Dynamic Component Creation](#11-ways-of-dynamic-component-manupulation)
+
+#### Resources
+- https://sveltesociety.dev/cheatsheet
 
 
-### Create Project
+
+### 1. Create Project
 ```
 yarn create vite my-app --template svelte-ts
 ```
 
 
 
-### Svelte Component/File Structure
+### 2. Svelte Component/File Structure
 
 ```svelte 
 <script>
@@ -31,7 +35,7 @@ yarn create vite my-app --template svelte-ts
 </style
 ```
 
-### Reactivity
+### 3. Reactivity
 ```svelte
 <script>
 	let count = 0;
@@ -54,7 +58,7 @@ yarn create vite my-app --template svelte-ts
 </button>
 ```
 
-### Html Text Content
+### 4. Html Text Content
 ```svelte
 <script>
 	let string = `this string contains some <strong>HTML!!!</strong>`;
@@ -63,11 +67,11 @@ yarn create vite my-app --template svelte-ts
 <p>{@html string}</p>
 ```
 
-### Assignments
+### 5. Assignments
 A simple rule of thumb: the updated variable must directly appear on the left hand side of the assignment.
 
 
-### Array Mutation
+### 6. Array Mutation
 Array.Push does not mutate the array, it has to be reassigned to trigger the change
 ```svelte
 <script>
@@ -93,7 +97,7 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 
 
 
-### Object Mutation
+### 7. Object Mutation
 ```svelte
 <script>
 	let obj = { foo: { bar : { bip : 0} } };
@@ -116,7 +120,7 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 </script>
 ```
 
-### Child Component Prop Declaration
+### 8. Child Component Prop Declaration
 ```svelte
 
 //Nested.svelte
@@ -137,7 +141,7 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 <Nested answer={42}/>
 ```
 
-### Spread Props
+### 9. Spread Props
 ```svelte
 <script>
 	const pkg = {
@@ -155,7 +159,7 @@ Array.Push does not mutate the array, it has to be reassigned to trigger the cha
 </script>
 ```
 
-### Logic Operators
+### 10. Logic Operators
 ```svelte
 <script>
 </script>
@@ -192,7 +196,7 @@ let cats = [
 
 ```
 
-### Ways of Dynamic Component Manupulation
+### 11. Ways of Dynamic Component Manupulation
 
 
 A basic component example
