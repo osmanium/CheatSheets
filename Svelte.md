@@ -10,9 +10,13 @@
 9. [Spread Props](#9-spread-props)
 10. [Logic Operators](#10-logic-operators)
 11. [Ways of Dynamic Component Creation](#11-ways-of-dynamic-component-manupulation)
+12. [$$restProps](#12-restprops)  
 
 #### Resources
+- https://svelte.dev/docs
 - https://sveltesociety.dev/cheatsheet
+- https://sveltesociety.dev/components
+- https://svelte.dev/examples/hello-world
 
 
 
@@ -338,3 +342,5 @@ counter.$destroy();
 - Example page: https://stackblitz.com/edit/vitejs-vite-x3sdxs?file=index.html,src%2FApp.svelte,src%2Flib%2FCounterWithId.svelte
 
 
+### 12. $$restProps
+Test
