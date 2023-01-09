@@ -11,6 +11,7 @@
 10. [Logic Operators](#10-logic-operators)
 11. [Ways of Dynamic Component Creation](#11-ways-of-dynamic-component-manupulation)
 12. [$$restProps](#12-restprops)  
+13. [Component Render Order](#13-component-render-order)  
 
 #### Resources
 - https://svelte.dev/docs
@@ -344,3 +345,17 @@ counter.$destroy();
 
 ### 12. $$restProps
 Test
+
+
+### 13. Component Render Order
+Most inner component will throw onMount event first, then parent.
+
+
+#### Example
+
+A contains B - B contains C
+Event order C-B-A
+
+https://stackblitz.com/edit/vitejs-vite-wnpf7x?file=src%2FApp.svelte,src%2Flib%2FComponentC.svelte,src%2Flib%2FComponentB.svelte,src%2Flib%2FComponentA.svelte&terminal=dev
+
+
