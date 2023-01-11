@@ -18,6 +18,7 @@
 - https://sveltesociety.dev/cheatsheet
 - https://sveltesociety.dev/components
 - https://svelte.dev/examples/hello-world
+- https://thevalleyofcode.com/svelte/
 
 
 
